@@ -69,6 +69,7 @@ class WPCOM_VIP_Jetpack_Mandatory {
 	 */
 	public function action_admin_footer() {
 		// We're adding our own JS template in, and this will override Jetpack's
+		// @TODO: When this Jetpack issue is resolved, refactor our code accordingly: https://github.com/Automattic/jetpack/issues/2189
 		$this->js_templates();
 	}
 
