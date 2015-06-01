@@ -103,6 +103,10 @@ require_once( __DIR__ . '/vip-jetpack/vip-jetpack.php' );
 
 EOT
 
+ls -alh $WORDPRESS_SITE_DIR/wp-content/mu-plugins/
+ls -alh $WORDPRESS_SITE_DIR/wp-content/mu-plugins/jetpack/
+exit 1
+
 # Create virtual display
 export DISPLAY=:99.0
 sh -e /etc/init.d/xvfb start
