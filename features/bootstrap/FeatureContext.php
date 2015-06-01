@@ -155,6 +155,8 @@ class FeatureContext extends MinkContext {
 	 */
 	public function takeScreenshotAfterFailedStep(Behat\Behat\Event\StepEvent $event) {
 		if ($event->getResult() === Behat\Behat\Event\StepEvent::FAILED) {
+			$html = $this->getSession()->getDriver()->getHtml( 'html' );
+			echo $html . PHP_EOL . PHP_EOL;
 			$driver = $this->getSession()->getDriver();
 			if ($driver instanceof Behat\Mink\Driver\Selenium2Driver) {
 				$step = $event->getStep();
