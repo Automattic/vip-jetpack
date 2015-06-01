@@ -99,7 +99,7 @@ cat <<EOT >> $WORDPRESS_SITE_DIR/wp-content/mu-plugins/jetpack.php
  */
 
 require_once( __DIR__ . '/jetpack/jetpack.php' );
-require_once( __DIR__ . '/vip-jetpack/vip-jetpack.php' );
+require_once( __DIR__ . '/$WORDPRESS_TEST_SUBJECT/vip-jetpack.php' );
 
 EOT
 
