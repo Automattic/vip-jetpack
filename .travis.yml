@@ -28,12 +28,12 @@ before_script:
 script:
 
   # PHP Lint
-#  - make lint
-#
-#  - make phpunit
-#
-#  # Run behat tests.
-#  - ${WORDPRESS_SITE_DIR}/wp-content/mu-plugins/${WORDPRESS_TEST_SUBJECT}/vendor/bin/behat -c $WORDPRESS_SITE_DIR/wp-content/mu-plugins/${WORDPRESS_TEST_SUBJECT}/behat.yml
+  - make lint
+
+  - make phpunit
+
+  # Run behat tests.
+  - ${WORDPRESS_SITE_DIR}/wp-content/mu-plugins/${WORDPRESS_TEST_SUBJECT}/vendor/bin/behat -c $WORDPRESS_SITE_DIR/wp-content/mu-plugins/${WORDPRESS_TEST_SUBJECT}/behat.yml
 
 notifications:
 
