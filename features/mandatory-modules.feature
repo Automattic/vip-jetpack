@@ -6,9 +6,9 @@ Feature: Some modules are mandatory
   @javascript @insulated
   Scenario: As an example, the Stats module should show as mandatory and Omnisearch should NOT show as mandatory
     Given I am logged in as "admin" with the password "password" and I am on "/wp-admin/admin.php?page=jetpack_modules"
-    # Check Stats module is mandatory
-    Then I should see "This module is required for WordPress.com VIP" in the "#wpcom-vip-no-delete-stats" element
-    And I should not see an "input[value='stats'][type='checkbox']" element
     # Check Omnisearch module is not mandatory
-    And I should not see a "#wpcom-vip-no-delete-omnisearch" element
+    Then I should not see a "#wpcom-vip-no-delete-omnisearch" element
     And I should see an "input[value='omnisearch'][type='checkbox']" element
+    # Check Stats module is mandatory
+    And I should see "This module is required for WordPress.com VIP" in the "#wpcom-vip-no-delete-stats" element
+    And I should not see an "input[value='stats'][type='checkbox']" element
