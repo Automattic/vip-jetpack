@@ -64,8 +64,6 @@ $WP_CLI core config --dbname=wordpress --dbuser=wordpress --dbpass=password --ex
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WORDPRESS_FAKE_MAIL_DIR', '${WORDPRESS_FAKE_MAIL_DIR}' );
 EOT
-cat $WORDPRESS_SITE_DIR/wp-config.php
-exit 100
 $WP_CLI core install --url=local.wordpress.dev --title="WordPress Testing" --admin_user=admin --admin_password=password --admin_email=testing@example.invalid
 
 # Make MU plugins
