@@ -9,6 +9,6 @@ Feature: Some modules are mandatory
     # Check Stats module is mandatory
     Then I should see "This module is required for WordPress.com VIP" in the "#wpcom-vip-no-delete-stats" element
     And I should not see an "input[value='stats'][type='checkbox']" element
-    # Check Omnisearch module is mandatory
+    # Check Omnisearch module is not mandatory
     And I should not see a "#wpcom-vip-no-delete-omnisearch" element
     And I should see an "input[value='omnisearch'][type='checkbox']" element
