@@ -1,4 +1,5 @@
-# vipv2-jetpack
+# vipv2-jetpack [![Build Status](https://magnum.travis-ci.com/Automattic/vipv2-jetpack.svg?token=saKYXPvcnyNUH8ChL4di&branch=add/first-version)](https://magnum.travis-ci.com/Automattic/vipv2-jetpack)
+
 Jetpack changes for VIPv2
 
 
