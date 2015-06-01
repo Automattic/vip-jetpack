@@ -13,6 +13,7 @@ WP_VERSION=${5-latest}
 
 WP_TESTS_DIR=${WP_TESTS_DIR-/tmp/wordpress-tests-lib}
 WP_CORE_DIR=${WP_CORE_DIR-/tmp/wordpress/}
+JP_CORE_DIR=${JP_CORE_DIR-/tmp/jetpack/}
 
 set -ex
 
@@ -42,6 +43,19 @@ install_wp() {
 	tar --strip-components=1 -zxmf /tmp/wordpress.tar.gz -C $WP_CORE_DIR
 
 	download https://raw.github.com/markoheijnen/wp-mysqli/master/db.php $WP_CORE_DIR/wp-content/db.php
+}
+
+install_jetpack() {
+
+	if [ -d $JP_CORE_DIR ]; then
+		return;
+	fi
+
+	mkdir -p $JP_CORE_DIR
+
+	download https://downloads.wordpress.org/plugin/jetpack.zip /tmp/jetpack.zip
+	unzip -o /tmp/jetpack.zip -d $JP_CORE_DIR
+
 }
 
 install_test_suite() {
@@ -94,5 +108,6 @@ install_db() {
 }
 
 install_wp
+install_jetpack
 install_test_suite
 install_db

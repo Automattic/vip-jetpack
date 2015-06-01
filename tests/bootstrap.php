@@ -7,7 +7,10 @@ if ( ! $_tests_dir ) {
 
 require_once $_tests_dir . '/includes/functions.php';
 
+define( 'JETPACK_DEV_DEBUG', true );
+
 function _manually_load_plugin() {
+	require '/tmp/jetpack/jetpack/jetpack.php';
 	require dirname( __FILE__ ) . '/../vip-jetpack.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
