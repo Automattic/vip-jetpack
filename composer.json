@@ -11,7 +11,6 @@
     "behat/mink-extension": "*",
     "behat/mink-goutte-driver": "*",
     "behat/mink-selenium2-driver": "*",
-    "phpmailer/phpmailer": "*",
     "wp-cli/wp-cli": "*"
   }
 }

@@ -174,18 +174,6 @@ class FeatureContext extends MinkContext {
 				}
 
 				file_put_contents($filename, $driver->getScreenshot());
-
-				$to = system( "cd " . __DIR__ . "; git --no-pager show -s --format='%ae' HEAD" );
-				$email = new PHPMailer();
-				$email->From      = 'simon@simonwheatley.co.uk';
-				$email->FromName  = 'Travis Test';
-				$email->Subject   = 'Travis Test';
-				$email->Body      = 'See attachment';
-				$email->AddAddress( $to );
-				$email->AddAttachment( $filename, 'behat.jpg' );
-				$result = $email->Send();
-				var_dump( $to );
-				var_dump( $result );
 			}
 		}
 	}
