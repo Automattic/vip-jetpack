@@ -76,6 +76,7 @@ ls -al $WORDPRESS_SITE_DIR/wp-content/mu-plugins/
 # Copy the No Mail MU plugin into place
 cp -pr $TRAVIS_BUILD_DIR/features/bootstrap/fake-mail.php $WORDPRESS_SITE_DIR/wp-content/mu-plugins/
 
+# @FIXME: Probably should download and unzip from .org, as it'd be quicker
 git clone git@github.com:Automattic/jetpack.git $WORDPRESS_SITE_DIR/wp-content/mu-plugins/jetpack
 # Subshell to cd and check out the tag, so we can close it and be where we were
 (
