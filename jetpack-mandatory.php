@@ -42,8 +42,8 @@ class WPCOM_VIP_Jetpack_Mandatory {
 	 * and sets some properties.
 	 */
 	public function __construct() {
-		add_action( 'admin_footer', array( $this, 'action_admin_footer_early' ), 5 );
-		add_action( 'admin_footer', array( $this, 'action_admin_footer' ), 8 );
+		add_action( 'admin_footer',                      array( $this, 'action_admin_footer_early' ), 5 );
+		add_action( 'admin_footer',                      array( $this, 'action_admin_footer' ), 8 );
 		add_action( 'load-jetpack_page_jetpack_modules', array( $this, 'action_load_jetpack_modules' ) );
 
 		add_filter( 'jetpack_get_default_modules',              array( $this, 'filter_jetpack_get_default_modules' ) );
@@ -58,7 +58,6 @@ class WPCOM_VIP_Jetpack_Mandatory {
 			'sso',
 			'stats',
 			'vaultpress',
-			'omnisearch',
 		);
 	}
 
@@ -172,7 +171,7 @@ class WPCOM_VIP_Jetpack_Mandatory {
 								<span class='configure'>{{{ item.configurable }}}</span>
 							<# } #>
 							<# if ( wpcom_vip_jetpack_forced.indexOf(item.module) !== -1 ) { #>
-								<span class='wpcom-vip-no-delete'><?php _e( 'This module is required for WordPress.com VIP', 'wpcom-vip-jetpack' ); ?></span>
+								<span class='wpcom-vip-no-delete' id="wpcom-vip-no-delete-{{ item.module }}"><?php _e( 'This module is required for WordPress.com VIP', 'wpcom-vip-jetpack' ); ?></span>
 							<# } else if ( item.activated && 'vaultpress' !== item.module ) { #>
 								<# if ( 'omnisearch' !== item.module ) { #>
 									<span class='delete'><a href="<?php echo admin_url( 'admin.php' ); ?>?page=jetpack&#038;action=deactivate&#038;module={{{ item.module }}}&#038;_wpnonce={{{ item.deactivate_nonce }}}"><?php _e( 'Deactivate', 'jetpack' ); ?></a></span>
