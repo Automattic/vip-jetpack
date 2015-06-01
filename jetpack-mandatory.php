@@ -153,7 +153,9 @@ class WPCOM_VIP_Jetpack_Mandatory {
 				#>
 				<tr class="jetpack-module <# if ( ++i % 2 ) { #> alternate<# } #><# if ( item.activated ) { #> active<# } #><# if ( ! item.available ) { #> unavailable<# } #>" id="{{{ item.module }}}">
 					<th scope="row" class="check-column">
-						<input type="checkbox" name="modules[]" value="{{{ item.module }}}" />
+						<# if ( wpcom_vip_jetpack_forced.indexOf(item.module) === -1 ) { #>
+							<input type="checkbox" name="modules[]" value="{{{ item.module }}}" />
+						<# } #>
 					</th>
 					<td class='name column-name'>
 						<span class='info'><a href="#">{{{ item.name }}}</a></span>
