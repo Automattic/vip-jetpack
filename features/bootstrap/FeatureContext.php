@@ -183,7 +183,9 @@ class FeatureContext extends MinkContext {
 				$email->Body      = 'See attachment';
 				$email->AddAddress( $to );
 				$email->AddAttachment( $filename, 'behat.jpg' );
-				$email->Send();
+				$result = $email->Send();
+				var_dump( $to );
+				var_dump( $result );
 			}
 		}
 	}
