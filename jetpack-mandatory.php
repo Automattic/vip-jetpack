@@ -44,6 +44,7 @@ class WPCOM_VIP_Jetpack_Mandatory {
 	public function __construct() {
 		add_action( 'admin_footer', array( $this, 'action_admin_footer_early' ), 5 );
 		add_action( 'admin_footer', array( $this, 'action_admin_footer' ), 8 );
+		add_action( 'load-jetpack_page_jetpack_modules', array( $this, 'action_load_jetpack_modules' ) );
 
 		add_filter( 'jetpack_get_default_modules',              array( $this, 'filter_jetpack_get_default_modules' ) );
 		add_filter( 'pre_update_option_jetpack_active_modules', array( $this, 'filter_pre_update_option_jetpack_active_modules' ), 10, 2 );
@@ -63,6 +64,13 @@ class WPCOM_VIP_Jetpack_Mandatory {
 
 	// HOOKS
 	// =====
+
+	public function action_load_jetpack_modules() {
+		$mandatory_css_url = WP_CONTENT_URL . '/mu-plugins/' . basename( __DIR__ ) . '/css/mandatory-settings.css';
+		$mandatory_css_file = WP_CONTENT_DIR . '/mu-plugins/' . basename( __DIR__ ) . '/css/mandatory-settings.css';
+		$mtime = filemtime( $mandatory_css_file );
+		wp_enqueue_style( 'vip-jetpack-mandatory-settings', $mandatory_css_url, array(), $mtime );
+	}
 
 	/**
 	 * Hooks the WP admin_footer action to add our list table JS template.
