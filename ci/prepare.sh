@@ -60,7 +60,7 @@ cd $WORDPRESS_SITE_DIR
 # @TODO Figure out how to deal with installing "trunk", SVN checkout?
 $WP_CLI core download
 # @TODO Set WP_DEBUG and test for notices, etc
-$WP_CLI core config --dbname=wordpress --dbuser=wordpress --dbpass=password <<EOT
+$WP_CLI core config --dbname=wordpress --dbuser=wordpress --dbpass=password --extra-php <<EOT
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WORDPRESS_FAKE_MAIL_DIR', '${WORDPRESS_FAKE_MAIL_DIR}' );
 EOT
