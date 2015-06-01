@@ -105,7 +105,9 @@ EOT
 
 ls -alh $WORDPRESS_SITE_DIR/wp-content/mu-plugins/
 ls -alh $WORDPRESS_SITE_DIR/wp-content/mu-plugins/jetpack/
-exit 1
+cat $WORDPRESS_SITE_DIR/wp-content/mu-plugins/jetpack.php
+curl -s http://local.wordpress.dev/
+exit 100
 
 # Create virtual display
 export DISPLAY=:99.0
