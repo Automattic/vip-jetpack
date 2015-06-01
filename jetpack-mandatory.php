@@ -127,6 +127,15 @@ class WPCOM_VIP_Jetpack_Mandatory {
 	// =========
 
 	/**
+	 * A getter for the mandatory_modules property.
+	 *
+	 * @return array An array of mandatory Jetpack module slugs
+	 */
+	public function get_mandatory_modules() {
+		return $this->mandatory_modules;
+	}
+
+	/**
 	 * Provides a JS template for the JP module listing template. This overrides
 	 * the JP template of the same purpose.
 	 *
