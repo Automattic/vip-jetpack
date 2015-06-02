@@ -56,9 +56,9 @@ class WPCOM_VIP_Jetpack_Mandatory {
 		add_action( 'load-jetpack_page_jetpack_modules', array( $this, 'action_load_jetpack_modules' ) );
 
 		// @TODO: Add VIP scanner check to watch for people unhooking this
-		add_filter( 'jetpack_get_default_modules',              array( $this, 'filter_jetpack_get_default_modules' ) );
+		add_filter( 'jetpack_get_default_modules',              array( $this, 'filter_jetpack_get_default_modules' ), 99 );
 		// @TODO: Add VIP scanner check to watch for people unhooking this
-		add_filter( 'pre_update_option_jetpack_active_modules', array( $this, 'filter_pre_update_option_jetpack_active_modules' ), 10, 2 );
+		add_filter( 'pre_update_option_jetpack_active_modules', array( $this, 'filter_pre_update_option_jetpack_active_modules' ), 99, 2 );
 	}
 
 	// HOOKS
