@@ -16,7 +16,17 @@ class WPCOM_VIP_Jetpack_Mandatory {
 	 *
 	 * @var array
 	 */
-	protected $mandatory_modules;
+	protected $mandatory_modules = array(
+		'json-api',
+		'manage',
+		'monitor',
+		'photon',
+		'protect',
+		'sso',
+		'stats',
+		'vaultpress',
+		'omnisearch',
+	);
 
 	/**
 	 * Initiate an instance of this class if one doesn't
@@ -38,8 +48,7 @@ class WPCOM_VIP_Jetpack_Mandatory {
 	}
 
 	/**
-	 * Class constructor. Handles hooking actions and filters,
-	 * and sets some properties.
+	 * Class constructor. Handles hooking actions and filters.
 	 */
 	public function __construct() {
 		add_action( 'admin_footer',                      array( $this, 'action_admin_footer_early' ), 5 );
@@ -50,17 +59,6 @@ class WPCOM_VIP_Jetpack_Mandatory {
 		add_filter( 'jetpack_get_default_modules',              array( $this, 'filter_jetpack_get_default_modules' ) );
 		// @TODO: Add VIP scanner check to watch for people unhooking this
 		add_filter( 'pre_update_option_jetpack_active_modules', array( $this, 'filter_pre_update_option_jetpack_active_modules' ), 10, 2 );
-
-		$this->mandatory_modules = array(
-			'json-api',
-			'manage',
-			'monitor',
-			'photon',
-			'protect',
-			'sso',
-			'stats',
-			'vaultpress',
-		);
 	}
 
 	// HOOKS
