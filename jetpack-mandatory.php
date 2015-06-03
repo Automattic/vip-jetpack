@@ -25,7 +25,6 @@ class WPCOM_VIP_Jetpack_Mandatory {
 		'sso',
 		'stats',
 		'vaultpress',
-		'omnisearch',
 	);
 
 	/**
