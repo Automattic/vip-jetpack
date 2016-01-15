@@ -10,3 +10,10 @@
  */
 
 require_once( __DIR__ . '/jetpack-mandatory.php' );
+
+/**
+ * On VIP Go, we always want to use the Go Photon service, instead of WordPress.com's
+ */
+add_filter( 'jetpack_photon_domain', function( $domain, $image_url ) {
+	return home_url();
+}, 2, 9999 );
