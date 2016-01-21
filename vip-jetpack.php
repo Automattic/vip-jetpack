@@ -9,6 +9,19 @@
  * License: GPL2+
  */
 
+/**
+ * Remove certain modules from the list of those that can be activated
+ * Blocks access to certain functionality that isn't compatible with the platform.
+ */
+add_filter( 'jetpack_get_available_modules', function( $modules ) {
+	unset( $modules['sitemaps'] ); // Duplicates msm-sitemaps and doesn't scale for our client's needs (https://github.com/Automattic/jetpack/issues/3314)
+
+	return $modules;
+}, 999 );
+
+/**
+ * Enable VIP modules required as part of the platform
+ */
 require_once( __DIR__ . '/jetpack-mandatory.php' );
 
 /**
