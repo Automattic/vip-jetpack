@@ -30,9 +30,3 @@ add_filter( 'jetpack_get_available_modules', function( $modules ) {
 add_filter( 'jetpack_photon_domain', function( $domain, $image_url ) {
 	return home_url();
 }, 2, 9999 );
-
-/**
- * Front-end SSL is support on VIP Go and in our file service,
- * and Jetpack's Photon module should respect that.
- */
-add_filter( 'jetpack_photon_reject_https', '__return_false' );
