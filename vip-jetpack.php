@@ -29,7 +29,7 @@ add_filter( 'jetpack_get_available_modules', function( $modules ) {
  */
 add_filter( 'jetpack_photon_domain', function( $domain, $image_url ) {
 	if ( ! apply_filters( 'wpcom_vip_enable_go_photon', true ) ) {
-		return;
+		return $domain;
 	}
 
 	// only apply to photon images
