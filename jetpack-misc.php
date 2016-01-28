@@ -20,6 +20,12 @@ add_filter( 'jetpack_get_available_modules', function( $modules ) {
  * On VIP Go, we always want to use the Go Photon service, instead of WordPress.com's
  */
 add_filter( 'jetpack_photon_domain', function( $domain, $image_url ) {
+	/**
+	 * Filter whether this site replaces Jetpack Photon
+	 * with the VIP Go Files Service.
+	 *
+	 * @param bool  $enable  If false, Jetpack Photon is used instead of the VIP Go Files Service
+	 */
 	if ( ! apply_filters( 'wpcom_vip_enable_go_photon', true ) ) {
 		return $domain;
 	}
