@@ -18,3 +18,14 @@ cd path/to/vip-jetpack
 cd path/to/vip-jetpack
 phpunit
 ```
+
+## Changelog
+
+### 1.1.0 – Tuesday 08 March 2016
+
+* Stop making Photon mandatory
+* Stop making the Jetpack JSON API mandatory
+
+### Prior to 1.1.0
+
+* Various things
