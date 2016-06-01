@@ -13,6 +13,7 @@
 add_filter( 'jetpack_get_available_modules', function( $modules ) {
 	unset( $modules['sitemaps'] ); // Duplicates msm-sitemaps and doesn't scale for our client's needs (https://github.com/Automattic/jetpack/issues/3314)
 	unset( $modules['photon'] );
+	unset( $modules['site-icon'] );
 
 	return $modules;
 }, 999 );
