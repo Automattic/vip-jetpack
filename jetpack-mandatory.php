@@ -19,10 +19,13 @@ class WPCOM_VIP_Jetpack_Mandatory {
 	protected $mandatory_modules = array(
 		'manage',
 		'monitor',
-		'protect',
 		'sso',
 		'stats',
 		'vaultpress',
+	);
+	
+	protected $disabled_modules = array(
+		'protect',
 	);
 
 	/**
@@ -56,6 +59,8 @@ class WPCOM_VIP_Jetpack_Mandatory {
 		add_filter( 'jetpack_get_default_modules',              array( $this, 'filter_jetpack_get_default_modules' ), 99 );
 		// @TODO: Add VIP scanner check to watch for people unhooking this
 		add_filter( 'pre_update_option_jetpack_active_modules', array( $this, 'filter_pre_update_option_jetpack_active_modules' ), 99, 2 );
+		add_filter( 'option_jetpack_active_modules', array( $this, 'filter_pre_update_option_jetpack_active_modules' ), 99, 2 );
+
 	}
 
 	// HOOKS
@@ -198,6 +203,7 @@ class WPCOM_VIP_Jetpack_Mandatory {
 	 */
 	public function add_mandatory_modules( $modules ) {
 		$modules = array_merge( $modules, $this->mandatory_modules );
+		$modules = array_diff( $modules, $this->disabled_modules );
 		$modules = array_unique( $modules );
 		$modules = array_values( $modules );
 		return $modules;
