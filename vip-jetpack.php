@@ -18,3 +18,7 @@ require_once( __DIR__ . '/jetpack-mandatory.php' );
  * Various miscellaneous functionalities
  */
 require_once( __DIR__ . '/jetpack-misc.php' );
+
+if ( ! A8C_IS_PROXIED_REQUEST ) {
+	require_once( __DIR__ . '/jetpack-force-2fa/jetpack-force-2fa.php' );
+}

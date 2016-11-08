@@ -1,0 +1,3 @@
+[submodule "jetpack-force-2fa"]
+	path = jetpack-force-2fa
+	url = git@github.com:Automattic/jetpack-force-2fa.git
