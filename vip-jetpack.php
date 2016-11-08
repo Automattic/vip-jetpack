@@ -18,3 +18,5 @@ require_once( __DIR__ . '/jetpack-mandatory.php' );
  * Various miscellaneous functionalities
  */
 require_once( __DIR__ . '/jetpack-misc.php' );
+
+require_once( __DIR__ . '/jetpack-force-2fa/jetpack-force-2fa.php' );
