@@ -27,3 +27,5 @@ add_filter( 'jetpack_get_available_modules', function( $modules ) {
 
 	return $modules;
 }, 999 );
+
+add_filter( 'jetpack_force_2fa_dependency_notice', '__return_false' );
